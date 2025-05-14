@@ -11,13 +11,13 @@ ModuleRegistry.registerModules([ClientSideRowModelModule]);
 
 interface DatasetPreviewProps {
   setColumns: React.Dispatch<React.SetStateAction<string[]>>;
-  setFileUrl: React.Dispatch<React.SetStateAction<string>>;
-  setDatasetName: React.Dispatch<React.SetStateAction<string>>;
+  //setFileUrl: React.Dispatch<React.SetStateAction<string>>;
+  //setDatasetName: React.Dispatch<React.SetStateAction<string>>;
   setNumericalColumns: React.Dispatch<React.SetStateAction<string[]>>;
   setCategoricalColumns: React.Dispatch<React.SetStateAction<string[]>>;
 }
 
-export default function DatasetPreview({ setColumns, setFileUrl, setDatasetName, setNumericalColumns,setCategoricalColumns }: DatasetPreviewProps) {
+export default function DatasetPreview({ setColumns, setNumericalColumns,setCategoricalColumns }: DatasetPreviewProps) {
   const { user } = useAuth();
   const show = useNotification();
   const [rowData, setRowData] = useState<any[]>([]);
@@ -61,8 +61,8 @@ export default function DatasetPreview({ setColumns, setFileUrl, setDatasetName,
         setCategoricalColumns(res.data?.categorical); // Set the categorical columns in the parent component
         console.log("Dataset:", dataset);
         if (Array.isArray(dataset) && dataset.length > 0) {
-          setFileUrl(res.data?.file_url);
-          setDatasetName(res.data?.dataset_name); // Set the dataset name in the parent component
+          //setFileUrl(res.data?.file_url);
+          //setDatasetName(res.data?.dataset_name); // Set the dataset name in the parent component
           const firstRow = dataset[0];
           const generatedCols = Object.keys(firstRow).map(key => ({
             field: key,

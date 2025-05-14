@@ -26,7 +26,7 @@ const featuresList = [
   { 
     id: 3, 
     name: "Train Machine Learning Models", 
-    description: "Train the best suited ML Model for your Dataset Automatically.", 
+    description: "Train the best suited ML Model for your Dataset with Full Control.", 
     icon: <AutoGraphIcon sx={{ fontSize: 28, color: '#2196F3' }} />
   },
   { 
