@@ -5,6 +5,7 @@ import React, { useState } from "react";
 import { styled } from "@mui/material/styles";
 import machineLearningVideo from "../assets/Machine Learning.mp4";
 import { useNotification } from "../context/NotificationContext";
+import { api } from "../utils/api";
 
 //Create a videocomponent that prevents re-rendering it,We can do it my memo in react 
 // Meaning it will make the website slow asf while typing in the input field
@@ -143,7 +144,7 @@ export const Register = () => {
       // Add registration logic here
       
       try{
-       await axios.post("http://localhost:8000/auth/register",{
+       await api.post("/auth/register",{
           firstName: formData.firstName,
           lastName: formData.lastName,
           email: formData.email,
