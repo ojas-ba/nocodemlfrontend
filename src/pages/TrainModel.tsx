@@ -40,14 +40,13 @@ const MODEL_METADATA = {
       { id: "rf", name: "Random Forest" },
       { id: "xgboost", name: "XGBoost" },
       { id: "lightgbm", name: "LightGBM" },
+      { id: "lr", name: "Linear Regression" },
     ]
   },
   clustering: {
     name: "Clustering",
     models: [
       { id: "kmeans", name: "K-Means", requires: ["n_clusters"] },
-      { id: "dbscan", name: "DBSCAN" },
-      { id: "hclust", name: "Hierarchical", requires: ["n_clusters"] },
     ]
   }
 };
@@ -225,7 +224,7 @@ export default function TrainModel({ numericalColumns, categoricalColumns }: Tra
                 </FormControl>
               </Grid>}
               {/* Features */}
-              {problemType && <Grid item xs={12}>
+              {problemType === 'clustering' && <Grid item xs={12}>
                 <FormControl fullWidth sx={{ mb: 2 }}>
                   <InputLabel>Features</InputLabel>
                   <Select
