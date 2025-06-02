@@ -31,8 +31,8 @@ const featuresList = [
   },
   { 
     id: 4, 
-    name: "Model Status Tracking", 
-    description: "Get Training Status Updates in real-time, Uses Google's Vertex AI.", 
+    name: "Parallel Model Training", 
+    description: "Train your Multiple ML Models in Parallel.", 
     icon: <InsightsIcon sx={{ fontSize: 28, color: '#2196F3' }} />
   },
   { 
@@ -43,7 +43,7 @@ const featuresList = [
   },
   { 
     id: 6, 
-    name: "Model Download & Deployment", 
+    name: "Model Download & Deployment (Still Working on this Feature)", 
     description: "Download trained models for further use or deployment in external applications using Endpoints in GCP.", 
     icon: <DownloadIcon sx={{ fontSize: 28, color: '#2196F3' }} />
   },
